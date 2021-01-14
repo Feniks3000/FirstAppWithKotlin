@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
+import com.google.android.material.snackbar.Snackbar
 
 class FirstFragment : Fragment() {
     override fun onCreateView(
@@ -22,5 +23,11 @@ class FirstFragment : Fragment() {
             NavHostFragment.findNavController(this@FirstFragment)
                     .navigate(R.id.action_FirstFragment_to_SecondFragment)
         }
+
+        view.findViewById<View>(R.id.button_new).setOnClickListener {
+            Snackbar.make(view, "New button pressed", Snackbar.LENGTH_LONG)
+                    .setAction("Action", null).show()
+        }
+
     }
 }
